@@ -15,6 +15,7 @@
 
 예제:
 입력:
+
 [
     {"name": "Alice", "score": 85},
     {"name": "Bob", "score": 92},
@@ -31,6 +32,8 @@
 - 리스트 컴프리헨션을 사용하면 간결하게 작성할 수 있습니다
 """
 
+
+
 def find_above_average_students(students):
     """
     평균 점수 이상인 학생들을 찾는 함수
@@ -42,40 +45,66 @@ def find_above_average_students(students):
         tuple: (평균 점수, 평균 이상 학생 이름 리스트)
     """
     # TODO: 모든 학생의 점수를 리스트로 추출하세요
-    pass
+    #그럼일단 리스트속 딕션어라를 먼저다꺼내보자
     
-    # TODO: 평균 점수를 계산하세요
-    pass
+students = [
+    {"name": "Alice", "score": 85},
+    {"name": "Bob", "score": 92},
+    {"name": "Charlie", "score": 78},
+    {"name": "David", "score": 95}
+]
     
-    # TODO: 평균 이상인 학생들의 이름을 리스트로 추출하세요
-    pass
-    
-    return average, above_average_students
+# for student in students:
+#         print(student[])  
 
-# 테스트 케이스
-if __name__ == "__main__":
-    # 테스트 케이스 1
-    students1 = [
-        {"name": "Alice", "score": 85},
-        {"name": "Bob", "score": 92},
-        {"name": "Charlie", "score": 78},
-        {"name": "David", "score": 95}
-    ]
+#     # TODO: 평균 점수를 계산하세요
+scores=[]
+for student in students:
+    score=student["score"]
+    scores.append(score)
+    total = sum(scores)
+average = total/len(students)
+print(average)
+
+#     pass
     
-    avg, students = find_above_average_students(students1)
-    print(f"평균 점수: {avg}")
-    print(f"평균 이상 학생: {students}")
-    print()
+#     # TODO: 평균 이상인 학생들의 이름을 리스트로 추출하세요
+#딕셔너리를 하나씩빼서 평균값과 비교하기 높은사람과 도출하자
+averageteam=[]
+#평균팀 설정
+for student in students:
+# 학생들을 하나씩 뺴서 학생에 넣는다
+    if average < student["score"]:
+        
+        averageteam.append(student["name"])
+print(averageteam)
     
-    # 테스트 케이스 2
-    students2 = [
-        {"name": "Emma", "score": 70},
-        {"name": "Frank", "score": 85},
-        {"name": "Grace", "score": 90}
-    ]
+#     return average, above_average_students
+
+# # 테스트 케이스
+# if __name__ == "__main__":
+#     # 테스트 케이스 1
+#     students1 = [
+#         {"name": "Alice", "score": 85},
+#         {"name": "Bob", "score": 92},
+#         {"name": "Charlie", "score": 78},
+#         {"name": "David", "score": 95}
+#     ]
     
-    avg, students = find_above_average_students(students2)
-    print(f"평균 점수: {avg}")
-    print(f"평균 이상 학생: {students}")
+#     avg, students = find_above_average_students(students1)
+#     print(f"평균 점수: {avg}")
+#     print(f"평균 이상 학생: {students}")
+#     print()
+    
+#     # 테스트 케이스 2
+#     students2 = [
+#         {"name": "Emma", "score": 70},
+#         {"name": "Frank", "score": 85},
+#         {"name": "Grace", "score": 90}
+#     ]
+    
+#     avg, students = find_above_average_students(students2)
+#     print(f"평균 점수: {avg}")
+#     print(f"평균 이상 학생: {students}")
 
 
