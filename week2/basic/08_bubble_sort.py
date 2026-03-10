@@ -41,8 +41,11 @@ def bubble_sort(arr):
     ## TODO: 인접한 두 원소 비교 및 교환
     ## arr[j] > arr[j+1]이면 교환
     ## 외부 반복문: n-1번 실행
-    pass
-        
+    if i in range(n):
+        if j in range(n-1):
+            if arr[i] < [j]:
+                arr[i],arr[j] = arr[j],arr[i]
+
     return arr
 
 def bubble_sort_optimized(arr):
