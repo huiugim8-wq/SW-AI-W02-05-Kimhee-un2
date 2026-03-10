@@ -26,47 +26,47 @@
 - i < j 조건을 유지하여 중복을 방지하세요
 """
 
-nums = [2, 7, 11, 15, 3]
-target = 9
+
 result = []
-def find_two_sum_pairs(nums, target):   
+def find_two_sum_pairs(nums, target):
+    result = []   
     for i in range(len(nums)):
         for j in range(i+1,len(nums)):
             if nums[i] + nums[j] == target:
                 result.append((i,j))
-find_two_sum_pairs(nums, target)
-print(result)
-#     # TODO: 이중 반복문으로 모든 쌍을 확인하세요
-#     ## 외부 반복문: i는 0부터 n-1까지
-#     ## 내부 반복문: j는 i+1부터 n까지 (중복 방지)
-#     ## nums[i] + nums[j]가 target과 같으면 (i, j)를 결과에 추가
+    return result
+
+    # TODO: 이중 반복문으로 모든 쌍을 확인하세요
+    ## 외부 반복문: i는 0부터 n-1까지
+    ## 내부 반복문: j는 i+1부터 n까지 (중복 방지)
+    ## nums[i] + nums[j]가 target과 같으면 (i, j)를 결과에 추가
    
-# # 테스트 케이스
-# if __name__ == "__main__":
-#     # 테스트 케이스 1
-#     nums1 = [2, 7, 11, 15]
-#     target1 = 9
-#     result1 = find_two_sum_pairs(nums1, target1)
-#     print(f"배열: {nums1}")
-#     print(f"목표 합: {target1}")
-#     print(f"결과 쌍: {result1}")
-#     print()
+# 테스트 케이스
+if __name__ == "__main__":
+    # 테스트 케이스 1
+    nums1 = [2, 7, 11, 15]
+    target1 = 9
+    result1 = find_two_sum_pairs(nums1, target1)
+    print(f"배열: {nums1}")
+    print(f"목표 합: {target1}")
+    print(f"결과 쌍: {result1}")
+    print()
     
-#     # 테스트 케이스 2
-#     nums2 = [1, 3, 4, 2, 5, 6]
-#     target2 = 7
-#     result2 = find_two_sum_pairs(nums2, target2)
-#     print(f"배열: {nums2}")
-#     print(f"목표 합: {target2}")
-#     print(f"결과 쌍: {result2}")
-#     print()
+    # 테스트 케이스 2
+    nums2 = [1, 3, 4, 2, 5, 6]
+    target2 = 7
+    result2 = find_two_sum_pairs(nums2, target2)
+    print(f"배열: {nums2}")
+    print(f"목표 합: {target2}")
+    print(f"결과 쌍: {result2}")
+    print()
     
-#     # 테스트 케이스 3
-#     nums3 = [1, 1, 1, 1]
-#     target3 = 2
-#     result3 = find_two_sum_pairs(nums3, target3)
-#     print(f"배열: {nums3}")
-#     print(f"목표 합: {target3}")
-#     print(f"결과 쌍: {result3}")
+    # 테스트 케이스 3
+    nums3 = [1, 1, 1, 1]
+    target3 = 2
+    result3 = find_two_sum_pairs(nums3, target3)
+    print(f"배열: {nums3}")
+    print(f"목표 합: {target3}")
+    print(f"결과 쌍: {result3}")
 
 

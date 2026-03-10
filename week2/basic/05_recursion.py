@@ -21,8 +21,14 @@
 - 팩토리얼: n! = n × (n-1)!, 0! = 1
 - 피보나치: fib(n) = fib(n-1) + fib(n-2), fib(0) = 0, fib(1) = 1
 """
+n = 5
 
 def factorial(n):
+    if n == 1:
+        return 1
+    
+    return n*factorial(n-1)
+
     """
     재귀를 사용한 팩토리얼 계산
     
@@ -40,6 +46,13 @@ def factorial(n):
     pass
 
 def fibonacci(n):
+
+    if n==0:
+        return 0
+    if n==1:
+        return 1
+    return fibonacci(n-1) + fibonacci(n-2)
+    
     """
     재귀를 사용한 피보나치 수 계산
     
