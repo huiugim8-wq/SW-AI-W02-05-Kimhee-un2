@@ -31,33 +31,40 @@ class Node:
 class LinkedList:
     """단순 연결 리스트"""
     def __init__(self):
+    # ll = LinkedList()리스트를 만들시에 이포멧을 적용한다
         self.head = None
-    
+        # 리스트의 내용은 비워져있다
+
+        
     def append(self, data):
-        """리스트 끝에 노드 추가"""
+    # 노드를 더해준다 11이란 리스트의 1이란는 데이터에게 즉 데이터값은 있지만 현제 노드는 존재하지 않는다
         new_node = Node(data)
-        
-        # TODO: 리스트가 비어있으면 head를 new_node로 설정
-        if head is None:
-            head = new_node
-        # TODO: 마지막 노드 찾기
-        current = head
-        while current.next is not None:
+        # self.data = 1
+        #self.next = None 이게 현재의 상태이다.
+
+        if self.head == None:
+        # 만약 해드가 없을경우
+            self.head = new_node
+        #   이값은 헤더이다
+        current = self.head
+             #current 는 헤더의 별명이다
+        while current.next != None:
+            # 헤더 다음값이 없을경우 브레이크 있으경우에 성립
             current = current.next
-        # TODO: 마지막 노드의 next를 new_node로 설정
+            # 헤는 같다 헤더다음?
         current.next = new_node
+        # current의 주소 즉노드는 새로운
         
-        return head
+        return self.head
     
     def print_list(self):
         """리스트의 모든 값 출력"""
         values = []
         
-        # TODO: head부터 시작
-        pass
-        
-        # TODO: 끝까지 순회하며 값 수집
-        pass
+        current = self.head
+        while current != None:
+            values.append(current.data)
+            current = current.next
         
         return values
 
