@@ -28,7 +28,7 @@ DFS: [0, 1, 2, 3] (순서는 구현에 따라 다를 수 있음)
 - 재귀로 구현
 - 방문 체크 필요
 - 깊이 우선으로 방문
-"""
+    """
 
 def dfs(graph, start, visited=None):
     """
@@ -42,16 +42,37 @@ def dfs(graph, start, visited=None):
     Returns:
         방문 순서 리스트
     """
-    # TODO: visited가 None이면 초기화
-    pass
+# 재귀를 통한 풀이
+def dfs(graph, start, visited=None):
+    # 방문 리스트 없으면 생성
+    if visited is None:
+        visited = []
     
-    # TODO: 현재 정점 방문
-    pass
-    
-    # TODO: 인접한 정점들에 대해 재귀
-    ## 방문하지 않은 정점이면 재귀 호출
-    pass
-    
+    # 현재 노드 방문
+    visited.append(start)
+
+    # 현재 노드와 연결된 노드들 확인
+    for next_node in graph[start]:
+        if next_node not in visited:
+            dfs(graph, next_node, visited)
+
+    return visited
+
+#  스택버전 
+def dfs_stack(graph, start):
+    visited = []
+    stack = [start]
+
+    while stack:
+        node = stack.pop()
+
+        if node not in visited:
+            visited.append(node)
+
+            for next_node in graph[node]:
+                if next_node not in visited:
+                    stack.append(next_node)
+
     return visited
 
 # 테스트 케이스
