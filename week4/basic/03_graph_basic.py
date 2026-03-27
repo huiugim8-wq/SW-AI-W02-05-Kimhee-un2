@@ -30,7 +30,8 @@
 
 def create_graph(vertices, edges, directed=False):
     """
-    그래프 생성 (인접 리스트)
+    그래프 생성 (인
+    접 리스트)
     
     Args:
         vertices: 정점 개수

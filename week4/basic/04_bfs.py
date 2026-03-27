@@ -31,8 +31,7 @@ def bfs(graph, start):
         for nx in graph[cur]: 
         #for nx in graph[0]:
         # nx 1,2
-            if(nx < 0 or nx > 3): #nx가 칸 넘어가면 continue
-                continue
+        
             if(nx not in visited): #nx가 visited에 없으면
                 visited.append(nx)
                 queue.append(nx)
